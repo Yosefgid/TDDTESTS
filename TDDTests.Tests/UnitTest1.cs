@@ -1,7 +1,4 @@
 
-
-//using System.ComponentModel;
-//using System.Drawing;
 using TDDTests.Core;
 
 namespace TDDTests.Tests

@@ -20,11 +20,24 @@ namespace TDDTests.Core
 
         public Point Rotate(Point point, Direction direction)
         {
-            if (point == Point.North && direction == Direction.Right)
+            Point[] directions = new Point[]
             {
-                return Point.East;
+                Point.North,
+                Point.East,
+                Point.South,
+                Point.West
+
+            };
+
+            int index = Array.IndexOf(directions, point);
+            if(direction == Direction.Right)
+            {
+                // add +1 to follow the order, for example if point =Point.East index will be 1 
+                //since we are moving to the right we want the index of the next item in the array
+                // Use moduluo to wrap around
+                index = (index + 1) % directions.Length;
             }
-            return point;
+            return directions[index];
         }
 
     }
