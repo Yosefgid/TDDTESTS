@@ -20,7 +20,12 @@ namespace TDDTests.Core
 
         public Point Rotate(Point point, Direction direction)
         {
-            return Point.South;
+            if (point == Point.North && direction == Direction.Right)
+            {
+                return Point.East;
+            }
+            return point;
         }
+
     }
 }
